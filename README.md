@@ -9,7 +9,6 @@ Este projeto foi desenvolvido como parte do módulo de **Introdução a Banco de
 *   **Normalização:** Aplicação estrita de regras até a Terceira Forma Normal (3NF)
 *   **SQL Avançado:** DDL (Data Definition Language), DML (Data Manipulation Language), JOINS, Funções de Agregação, Cláusulas Condicionais (`LIKE`) e colunas derivadas.
 
----
 
 ## Modelagem do Banco de Dados
 
@@ -19,7 +18,6 @@ O banco de dados foi normalizado e estruturado para evitar redundância de dados
 *   **Entidades identificadas:** `Dinosaur`, `Location`, `Period`, `Type` e `Taxonomy`.
 *   **Regra de Negócio:** Cada dinossauro possui exclusivamente uma localização, período, tipo e taxonomia associados (relacionamento obrigatório 1:N).
 
----
 
 ## Implementação e Scripts SQL
 
