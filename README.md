@@ -1,28 +1,30 @@
-# Museum Database - Sistema de Gerenciamento de Dinossauros
+# Museum Database - Dinosaur Records Management System
 
-Este projeto foi desenvolvido como parte do módulo de **Introdução a Banco de Dados** na **Arden University (Manchester)**. O objetivo foi projetar, normalizar (3NF) e implementar um banco de dados relacional robusto para gerenciar o acervo de fósseis de dinossauros de um museu, mapeando suas eras geológicas, localizações de descoberta, taxonomias e exibições atuais.
+This project was developed as part of the **Introduction to Database** module during my Bachelor of Science (BSc) in Computing at **Arden University (Manchester)**[cite: 1, 2]. The core objective was to design, normalize (3NF), and implement a robust relational database to manage a museum's collection of dinosaur fossils, mapping their geological eras, discovery locations, taxonomies, and current exhibition halls.
 
-## Tecnologias e Conceitos Utilizados
-*   **SGBD:** MySQL / MariaDB
-*   **Interface de Gerenciamento:** phpMyAdmin
-*   **Modelagem Relacional:** Diagramas Lógicos e Físicos, Entidades e Relacionamentos (1:N)
-*   **Normalização:** Aplicação estrita de regras até a Terceira Forma Normal (3NF)
-*   **SQL Avançado:** DDL (Data Definition Language), DML (Data Manipulation Language), JOINS, Funções de Agregação, Cláusulas Condicionais (`LIKE`) e colunas derivadas.
+## Technologies & Concepts Applied
+*   **DBMS:** MySQL / MariaDB
+*   **Management Interface:** phpMyAdmin
+*   **Relational Modeling:** Logical and Physical Diagrams, Entities, and Relationships (1:N)
+*   **Normalization:** Strictly met all criteria up to the Third Normal Form (3NF)
+*   **Advanced SQL:** DDL (Data Definition Language), DML (Data Manipulation Language), JOINS, Aggregation Functions, Conditional Clauses (`LIKE`), and Derived Columns.
 
+---
 
-## Modelagem do Banco de Dados
+## Database Modeling
 
-### Modelo Lógico e Físico
-O banco de dados foi normalizado e estruturado para evitar redundância de dados e garantir a integridade referencial. A tabela principal `Dinosaur` se relaciona como "filha" de tabelas auxiliares que contêm dados específicos de eras, locais, tipos e classificações científicas.
+### Logical & Physical Design
+The database was thoroughly normalized and structured to eliminate data redundancy and enforce referential integrity. The core `Dinosaur` table functions as a child table, referencing lookup tables containing specific data about periods, locations, types, and scientific classifications[cite: 2].
 
-*   **Entidades identificadas:** `Dinosaur`, `Location`, `Period`, `Type` e `Taxonomy`.
-*   **Regra de Negócio:** Cada dinossauro possui exclusivamente uma localização, período, tipo e taxonomia associados (relacionamento obrigatório 1:N).
+*   **Identified Entities:** `Dinosaur`, `Location`, `Period`, `Type`, and `Taxonomy`[cite: 2].
+*   **Business Rule:** Each dinosaur is strictly tied to a unique location, period, type, and taxonomy (mandatory 1:N relationship)[cite: 2].
 
+---
 
-## Implementação e Scripts SQL
+## Implementation & SQL Scripts
 
-### 1. Criação da Estrutura (DDL)
-Os scripts foram estruturados garantindo a ordem correta de dependência das chaves estrangeiras (`FOREIGN KEY`).
+### 1. Schema Creation (DDL)
+Scripts were structured sequentially to guarantee the correct order of data execution and foreign key (`FOREIGN KEY`) dependencies[cite: 2].
 
 ```sql
 CREATE TABLE Location (
@@ -58,7 +60,7 @@ CREATE TABLE Dinosaur (
     period_id INT NOT NULL,
     location_id INT NOT NULL,
     species VARCHAR(20) NOT NULL,
-    exhibition VARCHAR(100) NULL, -- Ajustado dinamicamente para suportar strings longas
+    exhibition VARCHAR(100) NULL,
     FOREIGN KEY (type_id) REFERENCES Type(type_id),
     FOREIGN KEY (taxonomy_id) REFERENCES Taxonomy(taxonomy_id),
     FOREIGN KEY (period_id) REFERENCES Period(period_id),
