@@ -1,8 +1,8 @@
-# Museum Database - Sistema de Gerenciamento de Dinossauros 🦖
+# Museum Database - Sistema de Gerenciamento de Dinossauros
 
 Este projeto foi desenvolvido como parte do módulo de **Introdução a Banco de Dados** na **Arden University (Manchester)**. O objetivo foi projetar, normalizar (3NF) e implementar um banco de dados relacional robusto para gerenciar o acervo de fósseis de dinossauros de um museu, mapeando suas eras geológicas, localizações de descoberta, taxonomias e exibições atuais.
 
-## 🛠️ Tecnologias e Conceitos Utilizados
+## Tecnologias e Conceitos Utilizados
 *   **SGBD:** MySQL / MariaDB
 *   **Interface de Gerenciamento:** phpMyAdmin
 *   **Modelagem Relacional:** Diagramas Lógicos e Físicos, Entidades e Relacionamentos (1:N)
@@ -11,7 +11,7 @@ Este projeto foi desenvolvido como parte do módulo de **Introdução a Banco de
 
 ---
 
-## 📐 Modelagem do Banco de Dados
+## Modelagem do Banco de Dados
 
 ### Modelo Lógico e Físico
 O banco de dados foi normalizado e estruturado para evitar redundância de dados e garantir a integridade referencial. A tabela principal `Dinosaur` se relaciona como "filha" de tabelas auxiliares que contêm dados específicos de eras, locais, tipos e classificações científicas.
@@ -21,7 +21,7 @@ O banco de dados foi normalizado e estruturado para evitar redundância de dados
 
 ---
 
-## 🚀 Implementação e Scripts SQL
+## Implementação e Scripts SQL
 
 ### 1. Criação da Estrutura (DDL)
 Os scripts foram estruturados garantindo a ordem correta de dependência das chaves estrangeiras (`FOREIGN KEY`).
